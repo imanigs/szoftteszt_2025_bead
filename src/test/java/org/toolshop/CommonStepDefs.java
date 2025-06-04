@@ -52,7 +52,7 @@ public class CommonStepDefs extends AbstractStepDefs{
     //used to log in if we are not already logged in, then continue
     @And("we are logged in as default user")
     public void weAreLoggedInAs() {
-        if (!homePage.isLoggedIn("Jack Howe")){      //the site will wait implicitly wait WAIT_TIME because of this
+        if (!homePage.isLoggedIn("Jack Howe")){      //the site will wait implicitly WAIT_TIME because of this
             homePage.navigateTo("Sign in");
             homePage.fillLoginForm("Email", "customer2@practicesoftwaretesting.com");
             homePage.fillLoginForm("Password", "welcome01");
