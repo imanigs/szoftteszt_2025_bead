@@ -11,10 +11,6 @@ import java.util.Map;
 
 public abstract class AbstractStepDefs {
 
-    // Gáspár Erzsébet Imani
-    // KGXFOV
-
-    //if the tests fail headless, increasing the wait_time should help
     private static final int WAIT_TIME = 10;
 
     protected static final WebDriver driver;
@@ -26,6 +22,7 @@ public abstract class AbstractStepDefs {
     static {
         WebDriverManager.chromedriver().setup();
         ChromeOptions options = new ChromeOptions();
+
         options.addArguments("window-size=1500,600");
         //options.addArguments("--headless=new");
 
@@ -44,8 +41,8 @@ public abstract class AbstractStepDefs {
         options.setExperimentalOption("prefs", prefs);
 
         driver = new ChromeDriver(options);
-
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(WAIT_TIME));
+        
         homePage = new HomePage(driver);
         adminPage = new AdminPage(driver);
         userPage = new UserPage(driver);
