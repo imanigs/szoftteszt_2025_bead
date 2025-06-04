@@ -4,6 +4,7 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.firefox.FirefoxDriver;
 
 import java.time.Duration;
 import java.util.HashMap;
@@ -41,11 +42,16 @@ public abstract class AbstractStepDefs {
         options.setExperimentalOption("prefs", prefs);
 
         driver = new ChromeDriver(options);
+
+        /*
+        WebDriverManager.firefoxdriver().setup();
+        driver = new FirefoxDriver();
+        */
+
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(WAIT_TIME));
-        
+
         homePage = new HomePage(driver);
         adminPage = new AdminPage(driver);
         userPage = new UserPage(driver);
     }
 }
-
