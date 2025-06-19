@@ -34,7 +34,8 @@ public class UserPage {
         "Add to Cart", By.xpath("/html/body/app-root/div/app-detail/div[1]/div[2]/div[2]/button[1]"),
             "Delete Product", By.xpath("/html/body/app-root/div/app-checkout/aw-wizard/div/aw-wizard-step[1]/app-cart/div/table/tbody/tr/td[5]/a"),
             "Add to Favorites", By.xpath("/html/body/app-root/div/app-detail/div[1]/div[2]/div[2]/button[2]"),
-            "Delete Favorite", By.xpath("/html/body/app-root/div/app-favorites/div/div[1]/div/div[3]/button/fa-icon")
+            "Delete Favorite", By.xpath("/html/body/app-root/div/app-favorites/div/div[1]/div/div[3]/button/fa-icon"),
+            "Remove item", By.xpath("/html/body/app-root/div/app-checkout/aw-wizard/div/aw-wizard-step[1]/app-cart/div/table/tbody/tr[1]/td[5]/a")
     );
 
     public UserPage(WebDriver driver) {
